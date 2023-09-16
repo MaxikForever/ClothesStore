@@ -1,6 +1,7 @@
 'use strict'
 import { products } from "./api.js";
 import * as slider from "./slider.js"
+import * as nav from "./navbar.js"
 
 const productsList = products; 
 

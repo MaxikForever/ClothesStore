@@ -11,6 +11,10 @@
     --color-product-des: #606063;
     --color-accent-span: #ef3636;
     --color-sales: #ec544e;
+    --color-background-banner: #041e42;
+    --color-sign-up-form-color: #818ea0;
+    --color-newsletter-span: #ffbd27;
+    --color-icons: #465b52;
 
 }
 
@@ -143,6 +147,15 @@ button.white {
     left: 20px;
 }
 
+#mobile{
+    display: none;
+    align-items: center;
+}
+
+#close {
+    display: none;
+}
+
 #hero {
     background-image: url("img/hero4.png");
     height: 90vh;
@@ -239,9 +252,10 @@ button.white {
 
 .product1 .pro-container {
     display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
+    justify-content: start;
+    padding: 20px 12px;
     flex-wrap: wrap;
+    gap: 12px;
 }
 
 .product1 .pro {
@@ -267,6 +281,11 @@ button.white {
     object-fit: cover;
     border-radius: 20px;
 }
+
+.product1 .pro-container[attribute="api"] .pro img{
+    max-width: 68.5% !important;
+}
+
 
 .product1 .pro .des {
     text-align: start;
@@ -308,6 +327,8 @@ button.white {
     bottom: 20px;
     right: 10px;
 }
+
+
 
 
 #banner {
@@ -515,3 +536,315 @@ font-size: 2.5rem;
     background-color: #333;
 }
 
+/* sing up form  */
+
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url("/img/banner/b14.png");
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: var(--color-background-banner);
+}
+
+
+#newsletter h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text-light);
+}
+
+#newsletter p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-sign-up-form-color);
+}
+
+#newsletter span {
+    color: var(--color-newsletter-span);
+}
+
+#newsletter .form {
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input {
+    height: 3.125rem;
+    padding: 0 1.25rem;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#newsletter button {
+    background-color: var(--color-hover-links);
+    color: var(--color-text-light);
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;  
+}
+
+footer .logo {
+    margin-bottom: 30px;
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    padding-bottom: 0 0 8px 0;
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: var(--color-hblack);
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer .follow i {
+    color: var(--color-icons);
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .install .row img {
+    border: 1px solid var(--color-hover-links);
+    border-radius: 6px;
+}
+
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer a:hover{
+    color: var(--color-hover-links);
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+
+/* Media Query */
+
+@media (max-width: 799px) {
+
+    .section-p1 {
+        padding: 40px;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: var(--color-background);
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: .3s;
+    }
+
+    #navbar.active {
+        right: 0;
+    }
+
+    #navbar li{
+        margin-bottom: 25px;
+    }
+
+    #mobile{
+        display: flex;
+        align-items: center;
+    }
+    
+    #mobile i{
+        color: var(--color-text);
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        font-size: 24px;
+    }
+
+    #lg-bag {
+        display: none;
+    }
+
+
+    #hero {
+        height: 70vh;
+        padding: 0 80px;
+        background-position: top 30% right 30%;
+    }
+
+    #feature {
+        justify-content: center;
+        gap: 15px;
+
+    }
+
+    .product1 .pro-container {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #banner {
+        height: 20vh;
+    }
+
+    #newsletter .form {
+        width: 70%;
+    }
+
+    .slide .banner-box h2 {
+        font-size: 2rem;
+    }
+
+    #slider-section #slider .slide {
+        background-position: 800px !important;
+    }
+}
+
+
+@media (max-width: 477px) {
+    #header {
+      padding: 10px 30px;
+    }
+
+    #hero {
+        padding: 0 20px;
+        background-position: 55%;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .section-p1 {
+        padding: 20px;
+    }
+
+    #feature {
+        justify-content: space-between;
+    }
+
+    #feature .fe-box {
+        width: 155px;
+        margin: 0 0 15px 0;
+    }
+
+    .product1 .pro {
+        width: 100%;
+    }
+
+    .product1 .pro-container {
+        margin-inline: 20px;
+    }
+
+    #banner {
+        height: 40vh;
+    }
+
+    .slide .banner-box h4 {
+        font-size: 1rem;
+    }
+
+    .slide .banner-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .slide .banner-box span {
+        font-size: .9rem;
+    }
+
+    .banner-box {
+        height: 40vh;
+        padding: 10px;
+    }
+
+    .slide .banner-box h2 {
+        font-size: 1rem;
+    }
+
+    .slide .banner-box .sales {
+        font-size: 1.3rem;
+    }
+
+    #arrow-left {
+        top: 70%;
+    }
+    
+    #arrow-right {
+        top: 70%;
+    }
+
+    .dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    button.white {
+        font-size: 0.65rem;
+        padding: 8px 15px;
+    }
+
+    #slider-section #slider .slide {
+        background-position: -500px !important;
+    }
+
+    #newsletter .form {
+        width: 100%;
+    }
+
+    #newsletter {
+        padding: 40px 20px;
+    }
+
+    footer .copyright {
+        text-align: start;
+    }
+
+}

@@ -133,7 +133,7 @@ function startAutoSlide() {
 
    
     interval = setInterval(() => {
-        if(positionX === (width * (slides.length -2 ) ) ) {
+        if(positionX === (width * (slides.length -1 ) ) ) {
             positionX = -width;
             currentDot = -1; 
         };
