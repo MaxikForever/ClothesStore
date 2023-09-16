@@ -4,7 +4,7 @@ const arrowLeft = document.querySelector("#arrow-left")
 const themeModeSwitcher = document.querySelector("#dark-light-modes-switcher");
 const sections = document.querySelectorAll("section");
 
-
+console.log("aaa")
 const slides = [
     {
         id: 1,
@@ -31,15 +31,15 @@ if(slides.length % 2){
 
 slider.style.width = `${slides.length * 1060}px`;
 
-slides.forEach(slide => {
-    slider.innerHTML += 
+slides.forEach(slide => { // Loops through each slide
+    slider.innerHTML += // Adds the following HTML to the slider
     `
         <div class = "slide" style="background-image: url(${slide.image});">
-            <div class="banner-box">
-                <h4>${slide.title}</h4>
-                <h2>${slide.slogan}</h2>
-                <span>${slide.description}</span>
-                <button class="white">${slide.buttonText}</button>
+            <div class="banner-box"> 
+                <h4>${slide.title}</h4> 
+                <h2>${slide.slogan}</h2> 
+                <span>${slide.description}</span> 
+                <button class="white">${slide.buttonText}</button> 
             </div>
         </div>
     `
@@ -70,11 +70,11 @@ arrowLeft.addEventListener("click", () => {
 })
 
 
+//check the position of the slider
 function checkArrows() {
     arrowLeft.style.display = positionX === 0 ? "none" : "block";
     arrowRight.style.display =  (positionX === (slides.length - 1) * 1060) ? "none": "block";
 }
-
 
 
 // make a  Theme switcher from light theme to dark 
@@ -85,3 +85,7 @@ themeModeSwitcher.addEventListener("click", () => {
 })
 
 
+
+function multiply ( x, b) {
+    return x * b;
+}
