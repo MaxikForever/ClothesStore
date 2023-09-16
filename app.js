@@ -77,11 +77,11 @@ function checkArrows() {
 
 
 
-// Theme switcher
-
+// make a  Theme switcher from light theme to dark 
 themeModeSwitcher.addEventListener("click", () => {
     sections.forEach(section => {
-        section.style.backgroundColor = "#000"
+        section.classList.toggle("dark-mode");
     })
 })
+
 
