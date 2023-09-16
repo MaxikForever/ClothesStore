@@ -1,5 +1,7 @@
 'use strict'
 import { products } from "./api.js";
+import * as slider from "./slider.js"
+
 const productsList = products; 
 
 const productsDiv = document.querySelector('.pro-container[attribute="api"]');
