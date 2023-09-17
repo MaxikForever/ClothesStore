@@ -11,21 +11,25 @@
     --color-product-des: #606063;
     --color-accent-span: #ef3636;
     --color-sales: #ec544e;
-    --color-background-banner: #041e42;
     --color-sign-up-form-color: #818ea0;
     --color-newsletter-span: #ffbd27;
     --color-icons: #465b52;
+    --color-background-banner: #041e42;
 
     --switch-bg: #F5F5F6;
     --switch-circle-bg: #FFD371;
     --icon-sun: #997F44;
     --icon-moon: #B1B0B5;
     --switch-circle-pos: .1rem;
+    --logo-colors: #1A1A1A;
 }
 
 
 :root {
     --default-transition: colors .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out, fill .3s ease-in-out, transform .3s ease-in-out;
+    --color-text-light-dark: #fff; 
+    --color-dark-text: #1a1a1a;
+    --banner-box-white: #f0f0f0;
 }
 
 :root[data-theme="dark"] {
@@ -38,17 +42,18 @@
     --color-fe-box: #e22813; /* Adjusted error box color */
     --color-product-des: #ccc; /* Adjusted product description color */
     --color-accent-span: #ffa0a0; /* Adjusted accent color */
-    --color-sales: #f78680; /* Adjusted sales color */
-    --color-background-banner: #d8e6f1; /* Adjusted banner background color */
+    --color-sales: #ec544e; /* Adjusted sales color */
     --color-sign-up-form-color: #676c7e; /* Adjusted sign-up form color */
     --color-newsletter-span: #ffca42; /* Adjusted newsletter span color */
     --color-icons: #c8d3ca; /* Adjusted icon color */
+    
 
     --switch-bg: #2D2C35; /* Adjusted switch background */
     --switch-circle-bg: #7190FF; /* Adjusted switch circle background */
     --icon-sun: #B1B0B5; /* Adjusted sun icon color */
     --icon-moon: #DCE3FF; /* Adjusted moon icon color */
     --switch-circle-pos: 3.3rem;
+    --logo-colors: #009CA5;
 }
 
 
@@ -95,7 +100,7 @@ h6 {
 
 p {
   font-size: 16px;
-  color: #465b52;
+  color: var(--color-icons);
   margin: 15px 0 20px 0;
 }
 
@@ -122,6 +127,7 @@ button.normal {
 
 body {
   width: 100%;
+  background-color: var(--color-text-light);
 }
 
 
@@ -129,10 +135,10 @@ button.white {
     font-size: 0.8rem;
     font-weight: 600;
     padding: 11px 18px;
-    color: var(--color-text-light);
+    color: var(--banner-box-white);
     background-color: transparent;
     cursor: pointer;
-    border: 1px solid var(--color-text-light);
+    border: 1px solid var(--banner-box-white);
     transition: 0.2s;
 }
 
@@ -215,12 +221,21 @@ button.white {
 
 }
 
+#hero h2 {
+    color: var(--color-dark-text);
+}
+
 #hero h4 {
     padding-bottom: 15px;
+    color: var(--color-dark-text);
 }
 
 #hero h1 {
    color: var(--color-hover-links);
+}
+
+#hero p {
+    color: #465b52;
 }
 
 #hero button {
@@ -300,7 +315,7 @@ button.white {
     justify-content: start;
     padding: 20px 12px;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 2.5vw;
 }
 
 .product1 .pro {
@@ -375,7 +390,6 @@ button.white {
 
 
 
-
 #banner {
     display: flex;
     flex-direction: column;
@@ -390,12 +404,12 @@ button.white {
 }
 
 #banner h4 {
-    color: var(--color-text-light); 
+    color: var(--color-text-light-dark); 
     font-size: 16px;
 }
 
 #banner h2 {
-    color: var(--color-text-light); 
+    color: var(--color-text-light-dark); 
     font-size: 30px;
     padding-block: 10px;
 }
@@ -432,20 +446,20 @@ button.white {
 }
 
 .banner-box h4 {
-    color: var(--color-text-light);
+    color: var(--banner-box-white);
     font-size: 20px;
     font-weight: 300;
 }
 
 
 .banner-box h2 {
-    color: var(--color-text-light);
+    color: var(--banner-box-white);
     font-size: 28px;
     font-weight: 800;
 }
 
 .banner-box span {
-    color: var(--color-text-light);
+    color: var(--banner-box-white);
     font-size: 14px;
     font-weight: 500;
     padding-bottom: 15px;
@@ -630,7 +644,6 @@ font-size: 2.5rem;
     align-items: center;
     flex-wrap: wrap;
     background-image: url("/img/banner/b14.png");
-    background-repeat: no-repeat;
     background-position: 20% 30%;
     background-color: var(--color-background-banner);
 }
@@ -639,7 +652,7 @@ font-size: 2.5rem;
 #newsletter h4 {
     font-size: 22px;
     font-weight: 700;
-    color: var(--color-text-light);
+    color: var(--color-text-light-dark);
 }
 
 #newsletter p {
@@ -671,7 +684,7 @@ font-size: 2.5rem;
 
 #newsletter button {
     background-color: var(--color-hover-links);
-    color: var(--color-text-light);
+    color: var(--color-text-light-dark);
     white-space: nowrap;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -741,6 +754,21 @@ footer .copyright {
 }
 
 /* Media Query */
+
+@media (max-width: 1107px)
+{
+    .product1 .pro-container {
+        justify-content: center;
+        gap: 1vw;
+    }
+}
+
+@media (max-width: 1060px) {
+    .product1 .pro-container {
+        justify-content: center;
+        gap: 3rem;
+    }
+}
 
 @media (max-width: 799px) {
 
@@ -931,17 +959,13 @@ footer .copyright {
 
 }
 
-#logo {
-    opacity: 0;
-    position: absolute;
-    width: 200px;
-    height: 54px;
-    background-image: url("img/logo_dark.png");
-    background-repeat: no-repeat;
-    background-position: center;
+#logo{
     transition-duration: .1s !important;
+    fill: var(--logo-colors);
 }
+
 
 .active {
     opacity: 1!important;
+
 }

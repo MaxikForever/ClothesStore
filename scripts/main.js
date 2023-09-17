@@ -11,7 +11,6 @@ const productsDiv = document.querySelector('.pro-container[attribute="api"]');
 
 
 
-
 productsList.forEach(prd =>{
     if(prd.category == 'electronics' || prd.category == `jewelery`){
         return
