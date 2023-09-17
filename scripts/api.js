@@ -22,5 +22,4 @@ async function getApiData() {
 
 
 await getApiData();
-console.log("api", products.length)
 export {products}

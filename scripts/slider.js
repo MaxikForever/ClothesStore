@@ -1,12 +1,13 @@
 const slider = document.querySelector("#slider");
 const arrowRight = document.querySelector("#arrow-right")
 const arrowLeft = document.querySelector("#arrow-left")
-const width = document.querySelectorAll(".slider__wrapper")[0].offsetWidth;
+let width = document.querySelectorAll(".slider__wrapper")[0].offsetWidth;
 const dotsContainer = document.querySelector(".slider__dots");
 
 let currentDot = 0; 
 
-console.log("aaa")
+
+
 const slides = [
     {
         id: 1,
@@ -112,14 +113,15 @@ for (let i =0; i<slides.length; i ++) {
 dotsContainer.children[0].classList.add("active-dot")
 
 function switchDots (order) {
-
+   
     try {
         dotsContainer.children[currentDot].classList.remove("active-dot");
     } catch (ex) {
         dotsContainer.lastChild.classList.remove("active-dot")    
     }
- 
+    
  currentDot+= order ? 1 : -1;
+ console.log(currentDot, order)
   dotsContainer.children[currentDot].classList.add("active-dot");
 }
 
@@ -147,3 +149,28 @@ function stopAutoSlide() {
 
 startAutoSlide();
 
+
+// Function to update slider and related calculations
+function updateSlider() {
+    console.log("update")
+    // Recalculate width based on the new window size
+    width = document.querySelectorAll(".slider__wrapper")[0].offsetWidth;
+    dotsContainer.children[currentDot].classList.remove("active-dot")
+    currentDot = 0;
+    dotsContainer.children[currentDot].classList.add("active-dot")
+    // Update the slider width
+    slider.style.width = `${slides.length * width}px`;
+
+    // Recalculate and update the position of the slider
+    positionX = currentDot * width * -1;
+    slider.style.transform = `translateX(${positionX}px)`;
+
+    checkArrows();
+}
+
+// Add an event listener for the window resize event
+window.addEventListener("resize", updateSlider);
+
+
+// Initial setup
+updateSlider();

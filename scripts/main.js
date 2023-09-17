@@ -2,10 +2,13 @@
 import { products } from "./api.js";
 import * as slider from "./slider.js"
 import * as nav from "./navbar.js"
+import * as theme from "./switchTheme.js"
 
 const productsList = products; 
 
 const productsDiv = document.querySelector('.pro-container[attribute="api"]');
+
+
 
 
 
