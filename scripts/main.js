@@ -1,8 +1,9 @@
 'use strict'
 import { products } from "./api.js";
-import * as slider from "./slider.js"
-import * as nav from "./navbar.js"
-import * as theme from "./switchTheme.js"
+import * as slider from "./slider.js";
+import * as nav from "./navbar.js";
+import * as theme from "./switchTheme.js";
+import * as filter from "./filter.js"
 
 const productsList = products; 
 
@@ -25,7 +26,7 @@ productsList.forEach(prd =>{
       <div class="start"> 
         ${stars}
       </div>
-      <h4>${prd.price}$</h4>
+      <h4>$${prd.price}</h4>
       </div>
       <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
     </div>
