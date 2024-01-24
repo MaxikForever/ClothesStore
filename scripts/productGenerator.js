@@ -68,7 +68,9 @@ async function getProductVariants(productId, products, productVariantId) {
         // Generate options for sizes
         let sizeOptions = sizes.map(size => `<option>${size}</option>`).join('');
 
-        const product = products.find(p => p.id ==productId);
+        const product = products.find(p => p.id == productId);
+
+        const currentProductVariant = productVariants.find(pv => pv.id == productVariantId) 
 
         productsSection.innerHTML += `
         <div  class="single-pro-details" >
@@ -80,8 +82,9 @@ async function getProductVariants(productId, products, productVariantId) {
             <input type="number" value="1">
             <button class="normal">Add To Cart</button>
             <h4>Product Details</h4>
-            <span>${product.description}</span> 
-            <p>${selectedVariant.color}</p>
+            <span>${product.description}</span>  
+            <h5 class="product-color">Color ${selectedVariant.color}</h5>
+            <h5>Stock: ${currentProductVariant.stock}</h5>
          </div>
         `
         attachClickHandlersToImages();
@@ -111,6 +114,7 @@ async function getProductVariants(productId, products, productVariantId) {
                 <div class="start"> 
                     ${stars}
                 </div>
+                <br>
                 <h4>$${product.price}</h4>
             </div>
             <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>

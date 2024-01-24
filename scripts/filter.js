@@ -3,9 +3,6 @@ const searchBar = document.getElementById("search-bar");
 const filter = document.getElementById("filter");
 const submitButton = document.querySelectorAll("#form input")[1];
 
-console.log("search -bar ", submitButton)
-
-
 
 submitButton.addEventListener("click", (e) => e.preventDefault() )
 
@@ -36,7 +33,7 @@ function filterProducts(keyword) {
     
     keyword = keyword.toLowerCase();
     allProducts.forEach((product) => {
-        const productTitle = product.querySelector(".des span").innerText.toLowerCase();
+        const productTitle = product.querySelector(".des h5").innerText.toLowerCase();
         if (productTitle === keyword) {
             product.style.display = "block";
         } else {
@@ -49,7 +46,8 @@ function filterProducts(keyword) {
 setTimeout(() => {
     // filterProducts ;
 
-    let allCategoriesElement = document.querySelectorAll(".des span");
+    
+    let allCategoriesElement = document.querySelectorAll(".des h5");
 
     const allCategories = ["all"];
 
@@ -60,11 +58,12 @@ setTimeout(() => {
     })
 
     allCategories.forEach(cat => {
+        console.log("category filter")
         category.innerHTML += `<option value="${cat}">${cat}</option>`
     })
 
 
-}, 500);
+}, 2000);
 
 
 category.addEventListener("change", (e) => {

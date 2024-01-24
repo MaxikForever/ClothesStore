@@ -1245,7 +1245,7 @@ footer .copyright {
 
   .small-img-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
   }
 
@@ -1301,3 +1301,7 @@ footer .copyright {
   #productTitle {
     color: var(--color-hover-links);
   }
+
+  .product-color {
+    margin: 1em 0 1em 0; 
+}
