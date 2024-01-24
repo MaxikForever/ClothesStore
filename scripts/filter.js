@@ -5,6 +5,8 @@ const submitButton = document.querySelectorAll("#form input")[1];
 
 console.log("search -bar ", submitButton)
 
+
+
 submitButton.addEventListener("click", (e) => e.preventDefault() )
 
 
@@ -91,7 +93,7 @@ function searchFilter() {
     const filter = searchBar.value.toLowerCase();
 
     allVisibleProducts.forEach( item => {
-        let text =  item.querySelector(".des h5").innerText.toLowerCase();
+        let text =  item.querySelector(".productTitle").innerText.toLowerCase();
 
         if(text.toLowerCase().includes(filter)) {
             item.style.display = "";

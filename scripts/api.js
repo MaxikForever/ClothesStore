@@ -2,7 +2,7 @@ const products = [];
 async function getApiData() {
     // Fetch the data from the API and return the promise
   
-   await fetch('https://fakestoreapi.com/products')
+   await fetch('https://clothickapi20240124181857.azurewebsites.net/Products')
         .then( res =>{
             if (res.ok) {
              return res.json()
@@ -22,4 +22,5 @@ async function getApiData() {
 
 
 await getApiData();
-export {products}
+console.log("api awaited")
+export {getApiData, products}

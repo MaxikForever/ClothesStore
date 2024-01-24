@@ -13,18 +13,28 @@ const productsDiv = document.querySelector('.pro-container[attribute="api"]');
 
 
 productsList.forEach(prd =>{
-    if(prd.category == 'electronics' || prd.category == `jewelery`){
-        return
+
+
+     let imageUrl = `https://clothickapi20240124181857.azurewebsites.net/${prd.image}`;
+     let stars = 0; 
+     let averageRating = 0;
+     if (prd.productRatings && prd.productRatings.length > 0) {
+        averageRating = prd.productRatings.reduce((acc, rating) => acc + rating.starRating, 0) / prd.productRatings.length;
     }
-    const stars = Array(Math.round(prd.rating.rate)).fill('<i class="fas fa-star"></i>').join('');
+     if (prd.productRatings && prd.productRatings.length > 0) {
+         stars = Array(Math.round(averageRating)).fill('<i class="fas fa-star"></i>').join('');
+     }
+   
+ 
     productsDiv.innerHTML += `
-    <div class="pro">
-        <img src="${prd.image}" alt="${prd.title}">
+    <div class="pro" onclick="window.location.href='sproduct.html?productId=${prd.id}';">
+        <img src="${imageUrl}" alt="${prd.brandName}">
       <div class="des">
-      <span>${prd.category}</span>
-      <h5>${prd.title}</h5>
+       <span>${prd.brandName}</span>
+      <h5>${prd.categoryName}</h5>
+      <h4 class="productTitle">${prd.title}</h4>
       <div class="start"> 
-        ${stars}
+      ${stars}
       </div>
       <h4>$${prd.price}</h4>
       </div>
@@ -32,3 +42,5 @@ productsList.forEach(prd =>{
     </div>
     `
 })
+
+
