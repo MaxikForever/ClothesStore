@@ -32,7 +32,7 @@ const productsDiv = document.querySelector('.pro-container[attribute="api"]');
                 }
     
                 productsDiv.innerHTML += `
-                    <div class="pro" onclick="window.location.href='sproduct.html?productId=${prd.id}';">
+                <div class="pro" onclick="window.location.href='sproduct.html?productId=${prd.id}&variantId=${prv.id}';">
                         <img src="${imageUrl}" alt="${prd.brandName}">
                         <div class="des">
                             <span>${prd.brandName}</span>
