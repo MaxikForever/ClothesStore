@@ -111,7 +111,7 @@ filter.addEventListener("change", (e) => {
     if (e.target.value === "alphabetical") {
         // Create an array of objects with product text and elements
         const productArray = allVisibleProducts.map((item) => {
-            const text = item.querySelector(".des h5").innerText.toLowerCase();
+            const text = item.querySelector(".des .productTitle").innerText.toLowerCase();
             return { text, element: item };
         });
 
@@ -125,7 +125,7 @@ filter.addEventListener("change", (e) => {
     } else if(e.target.value === "lower") {
 
         const productArray = allVisibleProducts.map((item) => {
-            const text = item.querySelector(".des h4").innerText.toLowerCase();
+            const text = item.querySelector(".des .price").innerText.toLowerCase();
             return { text, element: item };
         });
     
@@ -142,7 +142,7 @@ filter.addEventListener("change", (e) => {
       
     } else if(e.target.value === "higher") {
         const productArray = allVisibleProducts.map((item) => {
-            const text = item.querySelector(".des h4").innerText.toLowerCase();
+            const text = item.querySelector(".des .price").innerText.toLowerCase();
             return { text, element: item };
         });
     

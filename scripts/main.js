@@ -39,7 +39,7 @@ const productsDiv = document.querySelector('.pro-container[attribute="api"]');
                             <h5>${prd.categoryName}</h5>
                             <h4 class="productTitle">${prd.title}</h4>
                             <div class="start">${stars}</div>
-                            <h4>$${prd.price}</h4>
+                            <h4 class="price">$${prd.price}</h4>
                         </div>
                         <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
                     </div>
